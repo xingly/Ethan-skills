@@ -1,7 +1,7 @@
 {
-  "$schema": "横纵分析法 / Horizontal-Vertical Analysis Framework",
+  "$schema": "Horizontal-Vertical Analysis Framework v1.0",
   "version": "1.0",
-  "description": "一个用于系统性研究产品、公司、概念或人物的双轴分析框架。纵轴追踪完整生命历程，横轴展开当下竞争对比。",
+  "description": "一套融合语言学、社会科学、商学案例研究、竞争战略分析的系统化分析框架。用于系统性研究产品、公司、概念或人物。纵轴追踪完整生命历程，横轴展开当下竞争对比。",
 
   "meta": {
     "研究对象": {

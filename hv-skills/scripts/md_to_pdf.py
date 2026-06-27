@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-横纵分析法报告 Markdown → PDF 转换脚本 (WeasyPrint版)
+纵横双轴分析法报告 Markdown → PDF 转换脚本 (WeasyPrint版)
 用法: python md_to_pdf.py input.md output.pdf [--title "报告标题"] [--author "作者"]
 
 依赖: pip install weasyprint markdown --break-system-packages
@@ -201,8 +201,8 @@ a {
 """
 
 
-def md_to_html(md_text, title="横纵分析报告", subtitle="横纵分析法深度研究报告",
-               meta_line="", author="数字生命卡兹克"):
+def md_to_html(md_text, title="纵横双轴分析研究报告", subtitle="纵横双轴分析法深度研究报告",
+               meta_line="", author=""):
     """将 Markdown 转为带封面的 HTML"""
 
     # 用 markdown 库转换正文
@@ -216,21 +216,22 @@ def md_to_html(md_text, title="横纵分析报告", subtitle="横纵分析法深
     first_h1_match = re.search(r'<h1>(.*?)</h1>', html_body)
     if first_h1_match:
         extracted_title = first_h1_match.group(1)
-        if not title or title == "横纵分析报告":
+        if not title or title == "纵横双轴分析研究报告":
             title = extracted_title
         html_body = html_body.replace(first_h1_match.group(0), '', 1)
 
     # 替换 CSS 中的页眉占位符
-    css = CSS_TEMPLATE.replace("HEADER_TEXT", f"{title}  |  横纵分析法深度研究报告")
+    css = CSS_TEMPLATE.replace("HEADER_TEXT", f"{title}  |  纵横双轴分析法深度研究报告")
 
     # 构建封面
+    author_line = f"<div class='meta'>研究者: {author}</div>" if author else "<div class='meta'></div>"
     cover_html = f"""
     <div class="cover">
         <h1 style="page-break-before: avoid; border: none;">{title}</h1>
         <div class="subtitle">{subtitle}</div>
         {"<div class='meta'>" + meta_line + "</div>" if meta_line else ""}
         <hr class="divider">
-        <div class="meta">作者: {author}</div>
+        {author_line}
     </div>
     """
 
@@ -250,11 +251,11 @@ def md_to_html(md_text, title="横纵分析报告", subtitle="横纵分析法深
 
 
 def main():
-    parser = argparse.ArgumentParser(description="横纵分析法报告 Markdown → PDF")
+    parser = argparse.ArgumentParser(description="纵横双轴分析法报告 Markdown → PDF")
     parser.add_argument("input", help="输入的 Markdown 文件路径")
     parser.add_argument("output", help="输出的 PDF 文件路径")
     parser.add_argument("--title", default=None, help="报告标题")
-    parser.add_argument("--author", default="数字生命卡兹克", help="作者名")
+    parser.add_argument("--author", default="", help="作者/研究者名（可选）")
     args = parser.parse_args()
 
     with open(args.input, "r", encoding="utf-8") as f:
@@ -268,7 +269,7 @@ def main():
             meta_line = stripped
             break
 
-    html = md_to_html(md_text, title=args.title or "横纵分析报告", meta_line=meta_line, author=args.author)
+    html = md_to_html(md_text, title=args.title or "纵横双轴分析研究报告", meta_line=meta_line, author=args.author)
 
     # 保存中间 HTML（便于调试）
     html_path = args.output.replace('.pdf', '.html')

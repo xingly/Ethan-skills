@@ -1,0 +1,339 @@
+# =============================================================================
+# Ethan-skills 项目 .gitignore
+# 用于 Claude Code Skills 开发项目
+# =============================================================================
+
+# Python 相关
+# =============================================================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+
+# IDE 和编辑器相关
+# =============================================================================
+# PyCharm / IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+.vim/
+*.swp
+*.swo
+*~
+.*.swp
+.*.swo
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Atom
+.atom/
+
+# Visual Studio
+.vs/
+.vscode-server/
+
+# macOS
+# =============================================================================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*~
+
+
+# Windows
+# =============================================================================
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+
+# 项目特定的忽略文件
+# =============================================================================
+
+# 生成的PDF和HTML文件（临时输出）
+*.pdf
+*.html
+!hv-skills/scripts/md_to_pdf.py  # 保留脚本
+
+# 生成的测试文件
+test_*.pdf
+test_*.html
+test_*.md
+
+# 临时文件
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+
+# 依赖和工具生成的文件
+*.egg-info/
+.tox/
+.venv/
+venv/
+
+# 操作系统临时文件
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# 项目输出目录（如果有的话）
+output/
+outputs/
+temp/
+tmp/
+cache/
+
+# 研究报告的输出（用户可以选择性提交）
+# 通常研究报告应该在特定的reports/或outputs/目录中
+reports/
+outputs/
+*.research.pdf
+*.research.html
+
+
+# 调试和开发文件
+# =============================================================================
+.debug
+debug.log
+*.debug
+.env.local
+.env.*.local
+
+
+# 实际使用中可能生成的数据文件
+# =============================================================================
+# 数据文件
+*.csv
+*.xlsx
+*.xls
+*.json~  # JSON编辑器临时文件（但保留 references/*.json）
+!hv-skills/references/schema.json  # 保留schema文件
+
+# 数据库
+*.db
+*.sqlite
+*.sqlite3
+
+
+# 许可证和敏感信息
+# =============================================================================
+.env
+.env.local
+.env.*.local
+secrets/
+*.pem
+*.key
+*.p8
+
+
+# 备份和历史文件
+# =============================================================================
+*.orig
+*.bak
+*.backup
+~*
+*.~
+
+# Git 文件
+# =============================================================================
+.git/
+.gitattributes
+
+# npm / Node（如果项目后续扩展）
+# =============================================================================
+node_modules/
+npm-debug.log
+yarn-error.log
+.npmrc
+package-lock.json
+
+
+# 日志文件
+# =============================================================================
+*.log
+logs/
+*.out
+
+
+# 其他开发工具生成的文件
+# =============================================================================
+.gradle/
+.mvn/
+target/
+.m2/
+*.iml
+
+# 临时的研究数据（如果有搜索缓存等）
+.cache/
+cache/
+
+# 任何以点开头的目录（隐藏文件夹）除了 .github, .gitignore 等
+.*
+!.gitignore
+!.github
+!.editorconfig
+!.nvmrc
+
+
+# =============================================================================
+# 注释：
+# =============================================================================
+# 本项目是 Claude Code Skills 开发项目，包含：
+# 1. Markdown 文档（SKILL.md）- 需要提交
+# 2. Python 脚本（md_to_pdf.py）- 需要提交
+# 3. JSON schema 配置 - 需要提交
+# 4. 生成的PDF/HTML文件 - 本地使用，不提交
+# 5. IDE 配置 - 个人使用，不提交（.idea 目录）
+#
+# 核心原则：
+# - 提交源代码（.py, .md, .json）
+# - 不提交生成物（.pdf, .html）
+# - 不提交IDE配置和本地环境
+# - 不提交依赖包（node_modules, venv 等）
+# =============================================================================
